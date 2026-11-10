@@ -1,0 +1,14 @@
+# Local settings and temporary files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+
+# Credentials and local environment settings
+.env
+.env.*
+!.env.example
+
+# Dependencies and hosting state
+node_modules/
+.netlify/
