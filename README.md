@@ -49,7 +49,8 @@ Serve the project folder as the website root so the `/public/` paths work correc
 ├── public/
 │   ├── danny-resume.pdf
 │   ├── favicon-32x32.png
-│   └── html-css-google-homepage.png
+│   ├── html-css-google-homepage.png
+│   └── html-css-portfolio.png
 ├── .gitignore
 └── README.md
 ```
