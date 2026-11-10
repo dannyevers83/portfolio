@@ -263,6 +263,7 @@ section h2 {
   place-items: center;
   aspect-ratio: 16/9;
   order: 2;
+  border: 1px solid rgba(94, 234, 212, 0.35);
   border-radius: 0.25rem;
 }
 
