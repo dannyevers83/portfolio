@@ -14,6 +14,8 @@ A personal portfolio built with HTML and CSS to introduce myself, share my backg
 - Sticky section headings on smaller screens and a sticky introduction on desktop
 - Internal navigation with smooth scrolling
 - Project preview images and technology tags
+- React and vanilla JavaScript Task Manager projects, followed by the portfolio and Google homepage
+- Independent study details covering JavaScript, React, version control, testing, and deployment
 - Links to my résumé, GitHub, and LinkedIn
 - Custom favicon and a back-to-top button
 - Accessible names for icon links and screen reader text for the project star count
@@ -51,6 +53,7 @@ Serve the project folder as the website root so the `/public/` paths work correc
 │   ├── favicon-32x32.png
 │   ├── html-css-google-homepage.png
 │   ├── html-css-portfolio.png
+│   ├── task-manager-react.png
 │   └── task-manager.png
 ├── .gitignore
 └── README.md
