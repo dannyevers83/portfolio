@@ -1,0 +1,140 @@
+PORTFOLIO ACCESSIBILITY AND TECHNICAL REVIEW
+Review date: 16 November 2026
+Reference: WCAG 2.2, focusing on applicable Level A and AA criteria
+https://www.w3.org/WAI/WCAG22/quickref/
+
+SCOPE AND RESULT
+
+Reviewed the local index.html, styles.css, script.js, project images, local
+links, and the linked resume file. The website's separate project demos are
+not covered by this review.
+
+Confirmed code-level issues were corrected. Structural, asset, contrast, and
+simulated navigation checks passed after those corrections. This is not a
+complete WCAG conformance determination: browser rendering and assistive
+technology checks remain open. Do not describe the site as fully WCAG
+compliant based on this report.
+
+METHOD AND LIMITATIONS
+
+- Inspected HTML, CSS, JavaScript, file paths, PNG dimensions, and PDF metadata.
+- Used jsdom for DOM assertions, focus-target checks, and navigation updates.
+  Section positions were simulated; jsdom does not test responsive layout.
+- Calculated WCAG relative-luminance contrast from the CSS colors, including
+  the translucent page underlay and tag backgrounds.
+- Checked JavaScript syntax, formatting, and whitespace errors.
+- Checked PDF syntax using qpdf and basic properties using pdfinfo.
+- Chromium could not start: its socket operation was blocked by the session
+  sandbox. No real-browser, axe, Lighthouse, or screen-reader audit ran.
+- The web tool could not retrieve the portfolio or its three Netlify demos.
+  Their availability is unverified; this does not establish that they are down.
+- Shell network access is disabled. Remote link status, hosted fonts/icons,
+  deployment configuration, HTTPS headers, and real loading performance were
+  not verified.
+
+FINDINGS CORRECTED
+
+1. Date text contrast: 3.99:1 at 70% opacity was below the 4.5:1 normal-text
+   minimum (1.4.3). Removed the opacity; the calculated result is 6.79:1.
+2. Inline links depended on a color difference of only 2.08:1 from surrounding
+   text. About and footer paragraph links now use semibold text as a persistent
+   non-color distinction, with an outline on keyboard focus (1.4.1).
+   Verify that this weight difference is clear in the loaded font and fallback.
+3. The general .anchor-text color overrode the muted desktop navigation color.
+   The navigation selector now has the specificity needed for inactive links.
+   The active link also has a longer line, heavier type, and aria-current.
+4. Social and back-to-top links now have at least 44 by 44 CSS pixel targets.
+   This is an improvement; the smaller original targets were not individually
+   established as failures of the WCAG 2.5.8 spacing exceptions.
+5. Source links now have distinct accessible names identifying their projects,
+   while retaining the visible words "View source on GitHub" (2.4.4, 2.5.3).
+6. Focusable links have scroll margin to reduce the risk of mobile sticky
+   headings covering a focused link. Actual focus visibility needs browser
+   verification (2.4.11).
+7. Desktop sticky positioning is retained at all desktop viewport heights.
+   An audit adjustment that disabled it on short screens was reverted after
+   user feedback. Reachability on short screens, at zoom, and with text-spacing
+   overrides still requires browser verification.
+8. Decorative background layers do not intercept pointer events. The reduced-
+   motion preference now also removes the remaining link transitions.
+9. The page title now includes the developer role for clearer tab context.
+
+VERIFIED IN SOURCE / SIMULATED DOM
+
+- One main landmark, one h1, three h2 section headings, and h3 card titles.
+  The developer role is a paragraph rather than a skipped heading level.
+- The page declares English, UTF-8, a viewport, and a descriptive title.
+- The first link skips to a focusable main element. Calling focus() on that
+  target changes the active element in jsdom. Native skip-link scrolling
+  and Tab behavior were not tested in a browser.
+- Desktop section headings are visually hidden rather than display:none.
+  Mobile section headings retain their sticky presentation.
+- Images have descriptive alt text, matching intrinsic dimensions, and async
+  decoding. The three lower thumbnails use lazy loading.
+- All local asset paths and fragment targets exist; IDs are unique.
+- Every link has text or an accessible name. Decorative icons are aria-hidden.
+- No positive tabindex values, keyboard event traps, autoplay, or time limits
+  were found in the source.
+- Navigation marks exactly one current section at initial load, after scroll
+  in both directions, hash changes, restored page position, and resize in
+  simulated tests. Scroll updates are batched with requestAnimationFrame.
+- Section anchor links and page content do not require JavaScript.
+- After the audit, four GitHub star links replaced the static placeholders.
+  Counts are fetched from GitHub, including real zeroes, and cached for 15
+  minutes per browser session. A dash means the count has not loaded or is
+  unavailable; the GitHub stargazers links remain usable. Real API access
+  requires a separate browser check because networking is restricted here.
+- Image files total approximately 230 KiB. This is a file-size observation,
+  not a loading-speed or Core Web Vitals measurement.
+- The resume exists, is one A4 page, is tagged according to pdfinfo, and passed
+  qpdf's syntax checks. Tag correctness and reading order were not tested.
+
+CALCULATED CONTRAST AFTER FIXES
+
+Body text / dates / inactive menu    6.79:1    normal-text minimum 4.5:1
+Headings / ordinary links          14.13:1    normal-text minimum 4.5:1
+Accent text on page                11.78:1    normal-text minimum 4.5:1
+Tag text on translucent tag fill    9.75:1    normal-text minimum 4.5:1
+Accent focus outline on page       11.78:1    non-text minimum 3:1
+Skip-link text                     12.07:1    normal-text minimum 4.5:1
+Back-to-top icon while hovered      5.22:1    non-text minimum 3:1
+
+These are CSS-based calculations, not pixel samples from a browser. Text
+inside project screenshots and the PDF is not covered by these numbers.
+Thumbnail borders and tag fills are decorative; their contrast is not a
+standalone failure of non-text contrast.
+
+OPEN FINDINGS AND MANUAL VERIFICATION
+
+- PDF metadata title remains "Hyr.sh - Admin" (with a middle dot in the file),
+  rather than a descriptive resume title. Review the PDF's title, language,
+  tags, reading order, link names, and text contrast separately. The resume
+  content and PDF were not modified by this review.
+- Check layout at 320, 375, 768, 1024, and 1440 CSS pixel widths, including
+  a short landscape viewport. No content or links should be lost or overlap.
+- At 200% text/zoom and 400% browser zoom, verify reflow and avoid horizontal
+  scrolling for ordinary text. Test 1280 pixels at 400% zoom as well.
+- Apply text spacing overrides: line height 1.5, paragraph spacing 2 times font
+  size, letter spacing 0.12em, and word spacing 0.16em. Confirm no clipping.
+- Use Tab, Shift+Tab, and Enter from a fresh load. Check skip link, section
+  links, every source link, social links, resume link, and back-to-top.
+  Focus must remain visible, unobscured, and in a sensible order.
+- Use a screen reader to verify landmarks, the three h2 headings on desktop,
+  source link names, icon links, image alternatives, and current-section state.
+- Verify active navigation and sticky headings visually while scrolling,
+  including restored scroll positions and direct #experience/#projects loads.
+- Test reduced motion, forced colors/high contrast, and external fonts/icons
+  failing to load. Icon-only social links depend on Font Awesome for their
+  visible artwork even though their accessible names remain in the HTML.
+- Verify the live pages and all external destinations in a real browser.
+  Test deployment of script.js and all /public/ assets on Netlify.
+- Links opening new tabs use the browser's native target=_blank behavior.
+  Consider whether opening new tabs is desirable; it is not recorded as an
+  automatic WCAG failure in this review.
+- No forms, authentication, audio/video, drag controls, or editable widgets
+  are present on the portfolio page, so their related checks do not apply.
+
+PUBLICATION
+
+All reviewed fixes are local changes. This report does not confirm a commit,
+push, or successful Netlify deployment of these changes.

@@ -1,6 +1,6 @@
 # Danny Evers — Personal Portfolio
 
-A personal portfolio built with HTML and CSS to introduce myself, share my background as a BIM Engineer, and showcase my web development projects.
+A personal portfolio built with HTML, CSS, and a small JavaScript navigation script to introduce myself, share my background as a BIM Engineer, and showcase my web development projects.
 
 ## Website
 
@@ -13,26 +13,35 @@ A personal portfolio built with HTML and CSS to introduce myself, share my backg
 - Responsive layouts for mobile, tablet, and desktop
 - Sticky section headings on smaller screens and a sticky introduction on desktop
 - Internal navigation with smooth scrolling
+- Active section indicators in the desktop navigation that follow scrolling, with `aria-current` for assistive technology
 - Project preview images and technology tags
 - React and vanilla JavaScript Task Manager projects, followed by the portfolio and Google homepage
 - Independent study details covering JavaScript, React, version control, testing, and deployment
 - Links to my résumé, GitHub, and LinkedIn
 - Custom favicon and a back-to-top button
 - Accessible names for icon links and screen reader text for the project star count
+- A keyboard skip link, visible link focus styles, and section headings available to screen readers on desktop
+- Semibold links in paragraphs, visible keyboard focus outlines, readable date text, and larger social/back-to-top link targets
+- Explicit project image dimensions and lazy loading for lower project thumbnails
 
-The GitHub star count is currently a static placeholder.
+GitHub star links open each project's stargazers page. The public GitHub REST API supplies the real counts, including `0` for projects with no stars. Results are cached in sessionStorage for 15 minutes. If JavaScript is disabled or a count cannot be loaded, the star link remains available and displays a dash rather than an invented count. Requests time out after eight seconds. No API token is used; GitHub's unauthenticated rate limits apply.
 
 ## Built With
 
 - **HTML5** — page structure and content
 - **CSS3** — styling, custom properties, and hover effects
+- **JavaScript** — update the current section and fetch GitHub star counts
 - **Flexbox and CSS Grid** — layout and alignment
 - **Media queries** — responsive styling at 640px and 1024px
 - **Google Fonts** — Inter typography
 - **Font Awesome** — icons
 - **Netlify** — hosting
 
-No JavaScript, framework, or build step is required.
+No framework or build step is required. The page content and links work without JavaScript; the script adds the current-section indicator and GitHub star counts. Smooth scrolling and the indicator animation respect reduced-motion preferences.
+
+## Accessibility Review
+
+See [audit-report.txt](audit-report.txt) for the local accessibility and technical review, fixes, contrast calculations, and remaining manual checks. This review is not a WCAG conformance certification. Browser layout, screen reader behavior, the deployed website, and full PDF accessibility still require separate verification.
 
 ## Run Locally
 
@@ -47,6 +56,7 @@ Serve the project folder as the website root so the `/public/` paths work correc
 ```text
 .
 ├── index.html
+├── script.js
 ├── styles.css
 ├── public/
 │   ├── danny-resume.pdf

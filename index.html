@@ -7,8 +7,9 @@
       name="description"
       content="Danny Evers, junior full-stack developer with a background in BIM engineering. Explore my web development projects, skills, and experience."
     />
-    <title>Danny Evers</title>
+    <title>Danny Evers | Junior Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,18 +27,19 @@
   </head>
 
   <body id="top-of-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="underlay"></div>
     <header>
       <a href="/">
         <h1>Danny Evers</h1>
       </a>
-      <h4>Junior Full-Stack Developer</h4>
+      <p class="header-role">Junior Full-Stack Developer</p>
       <p>
         I’m a junior full-stack developer building accessible and engaging web
         experiences.
       </p>
 
-      <nav>
+      <nav aria-label="On this page">
         <a class="anchor-text" href="#about">
           <p>About</p>
         </a>
@@ -54,22 +56,22 @@
           class="social-link"
           href="https://www.linkedin.com/in/dannyevers83/"
           target="_blank"
-          aria-label="linkedin link"
+          aria-label="Danny Evers on LinkedIn"
         >
-          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
         </a>
         <a
           class="social-link"
           href="https://github.com/dannyevers83"
           target="_blank"
-          aria-label="github link"
+          aria-label="Danny Evers on GitHub"
         >
-          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section id="about">
         <div class="sticky-header">
           <h2 class="light-text">About</h2>
@@ -117,7 +119,10 @@
               <a class="anchor-text card-header" href="#projects">
                 <h3>
                   Full-Stack Development ⋅ Independent Study
-                  <i class="fa-solid fa-arrow-right-long anchor-icon"></i>
+                  <i
+                    class="fa-solid fa-arrow-right-long anchor-icon"
+                    aria-hidden="true"
+                  ></i>
                 </h3>
               </a>
               <p>
@@ -152,14 +157,17 @@
               >
                 <h3>
                   (BIM) Engineer ⋅ Klictet
-                  <i class="fa-solid fa-arrow-right-long anchor-icon"></i>
+                  <i
+                    class="fa-solid fa-arrow-right-long anchor-icon"
+                    aria-hidden="true"
+                  ></i>
                 </h3>
               </a>
               <p>
                 Develop and maintain detailed building information models,
                 perform technical calculations, and prepare cost estimates.
                 Collaborate with project teams to coordinate designs, resolve
-                technical issues, and ensure accurate project information
+                technical issues, and ensure accurate project information.
               </p>
               <div class="tag-container">
                 <div class="tag">BIM</div>
@@ -171,8 +179,11 @@
         </div>
         <a class="anchor-text" href="/public/danny-resume.pdf" target="_blank"
           ><p>
-            View Full resume
-            <i class="fa-solid fa-arrow-right-long anchor-icon"></i></p
+            View full résumé
+            <i
+              class="fa-solid fa-arrow-right-long anchor-icon"
+              aria-hidden="true"
+            ></i></p
         ></a>
       </section>
 
@@ -186,6 +197,9 @@
               <img
                 src="/public/task-manager-react.png"
                 alt="Screenshot of React Task Manager with a task input, filters, and checklist"
+                width="1575"
+                height="729"
+                decoding="async"
               />
             </div>
             <div class="card-column">
@@ -213,11 +227,25 @@
                 class="anchor-text"
                 href="https://github.com/dannyevers83/task-manager-react"
                 target="_blank"
+                aria-label="View source on GitHub: React Task Manager"
                 >View source on GitHub</a
               >
               <div class="project-stat light-text">
-                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <p>0<span class="sr-only"> GitHub stars</span></p>
+                <a
+                  class="project-stars-link"
+                  href="https://github.com/dannyevers83/task-manager-react/stargazers"
+                  target="_blank"
+                  data-github-repo="dannyevers83/task-manager-react"
+                  aria-label="View GitHub stars for task-manager-react; count not loaded"
+                >
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <p>
+                    <span data-star-count>—</span>
+                    <span class="sr-only" data-star-description>
+                      GitHub stars (count not loaded)</span
+                    >
+                  </p>
+                </a>
               </div>
               <div class="tag-container">
                 <div class="tag">React</div>
@@ -234,6 +262,10 @@
               <img
                 src="/public/task-manager.png"
                 alt="Screenshot of Task Manager with a task form, filters, and checklist"
+                width="1558"
+                height="730"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="card-column">
@@ -261,11 +293,25 @@
                 class="anchor-text"
                 href="https://github.com/dannyevers83/task-manager"
                 target="_blank"
+                aria-label="View source on GitHub: Vanilla JavaScript Task Manager"
                 >View source on GitHub</a
               >
               <div class="project-stat light-text">
-                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <p>0<span class="sr-only"> GitHub stars</span></p>
+                <a
+                  class="project-stars-link"
+                  href="https://github.com/dannyevers83/task-manager/stargazers"
+                  target="_blank"
+                  data-github-repo="dannyevers83/task-manager"
+                  aria-label="View GitHub stars for task-manager; count not loaded"
+                >
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <p>
+                    <span data-star-count>—</span>
+                    <span class="sr-only" data-star-description>
+                      GitHub stars (count not loaded)</span
+                    >
+                  </p>
+                </a>
               </div>
               <div class="tag-container">
                 <div class="tag">HTML</div>
@@ -280,6 +326,10 @@
               <img
                 src="/public/html-css-portfolio.png"
                 alt="Danny Evers personal portfolio cover"
+                width="1562"
+                height="725"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="card-column">
@@ -297,20 +347,35 @@
                 </h3>
               </a>
               <p>
-                A personal portfolio built with HTML and CSS to showcase my
-                projects, skills, and professional background. Uses CSS Grid,
-                Flexbox, and media queries for responsive layouts, with sticky
-                navigation and smooth scrolling.
+                A personal portfolio built with HTML, CSS, and JavaScript to
+                showcase my projects, skills, and professional background. Uses
+                CSS Grid, Flexbox, and media queries for responsive layouts,
+                with sticky navigation, active section indicators, and keyboard
+                accessibility.
               </p>
               <a
                 class="anchor-text"
                 href="https://github.com/dannyevers83/portfolio"
                 target="_blank"
+                aria-label="View source on GitHub: Personal Portfolio"
                 >View source on GitHub</a
               >
               <div class="project-stat light-text">
-                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <p>0<span class="sr-only"> GitHub stars</span></p>
+                <a
+                  class="project-stars-link"
+                  href="https://github.com/dannyevers83/portfolio/stargazers"
+                  target="_blank"
+                  data-github-repo="dannyevers83/portfolio"
+                  aria-label="View GitHub stars for portfolio; count not loaded"
+                >
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <p>
+                    <span data-star-count>—</span>
+                    <span class="sr-only" data-star-description>
+                      GitHub stars (count not loaded)</span
+                    >
+                  </p>
+                </a>
               </div>
               <div class="tag-container">
                 <div class="tag">HTML</div>
@@ -325,6 +390,10 @@
               <img
                 src="/public/html-css-google-homepage.png"
                 alt="Screenshot of my Google homepage recreation"
+                width="1576"
+                height="729"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="card-column">
@@ -334,8 +403,11 @@
                 target="_blank"
               >
                 <h3>
-                  Build a google homepage
-                  <i class="fa-solid fa-arrow-right-long anchor-icon"></i>
+                  Google Homepage Recreation
+                  <i
+                    class="fa-solid fa-arrow-right-long anchor-icon"
+                    aria-hidden="true"
+                  ></i>
                 </h3>
               </a>
               <p>
@@ -347,11 +419,25 @@
                 class="anchor-text"
                 href="https://github.com/dannyevers83/google-homepage"
                 target="_blank"
+                aria-label="View source on GitHub: Google Homepage Recreation"
                 >View source on GitHub</a
               >
               <div class="project-stat light-text">
-                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <p>0<span class="sr-only"> GitHub stars</span></p>
+                <a
+                  class="project-stars-link"
+                  href="https://github.com/dannyevers83/google-homepage/stargazers"
+                  target="_blank"
+                  data-github-repo="dannyevers83/google-homepage"
+                  aria-label="View GitHub stars for google-homepage; count not loaded"
+                >
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <p>
+                    <span data-star-count>—</span>
+                    <span class="sr-only" data-star-description>
+                      GitHub stars (count not loaded)</span
+                    >
+                  </p>
+                </a>
               </div>
               <div class="tag-container">
                 <div class="tag">HTML</div>
@@ -368,7 +454,7 @@
           href="https://github.com/dannyevers83?tab=repositories"
           target="_blank"
           ><p>
-            View Full Project Archive<span class="right-arrow">&rarr;</span>
+            View full project archive<span class="right-arrow">&rarr;</span>
           </p></a
         >
       </section>
@@ -384,7 +470,7 @@
           >Visual Studio Code</a
         >
         by yours truly.<br />
-        Built with HTML & CSS, and deployed with
+        Built with HTML, CSS &amp; JavaScript, and deployed with
         <a class="anchor-text" href="https://app.netlify.com/" target="_blank"
           >Netlify</a
         >.<br />
@@ -395,7 +481,7 @@
         typeface.
       </p>
       <a class="scroll-to-top" href="#top-of-page" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i>
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
       </a>
     </footer>
   </body>
