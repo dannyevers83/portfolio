@@ -16,6 +16,7 @@ A personal portfolio built with HTML, CSS, and a small JavaScript navigation scr
 - Active section indicators in the desktop navigation that follow scrolling, with `aria-current` for assistive technology
 - Project preview images and technology tags
 - React/Express and vanilla JavaScript Task Manager projects, followed by the portfolio and Google homepage
+- The React/Express card links to both the frontend source and the separate Express API repository
 - Independent study details covering JavaScript, React, Node.js, Express, HTTP APIs, version control, testing, and deployment
 - Links to my résumé, GitHub, and LinkedIn
 - Custom favicon and a back-to-top button
