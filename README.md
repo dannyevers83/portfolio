@@ -25,6 +25,9 @@ A personal portfolio built with HTML, CSS, and a small JavaScript navigation scr
 - A keyboard skip link, visible link focus styles, and section headings available to screen readers on desktop
 - Semibold links in paragraphs, visible keyboard focus outlines, readable date text, and larger social/back-to-top link targets
 - Explicit project image dimensions and lazy loading for lower project thumbnails
+- Canonical URL, social sharing metadata, and structured public profile information
+- A robots.txt file and XML sitemap for search engine discovery
+- Only the Inter font weights used by the stylesheet are requested
 
 GitHub star links open each project's stargazers page. The public GitHub REST API supplies the real counts, including `0` for projects with no stars. Results are cached in sessionStorage for 15 minutes. If JavaScript is disabled or a count cannot be loaded, the star link remains available and displays a dash rather than an invented count. Requests time out after eight seconds. No API token is used; GitHub's unauthenticated rate limits apply.
 
@@ -45,6 +48,12 @@ No framework or build step is required. The page content and links work without 
 
 See [audit-report.txt](audit-report.txt) for the local accessibility and technical review, fixes, contrast calculations, and remaining manual checks. This review is not a WCAG conformance certification. Browser layout, screen reader behavior, the deployed website, and full PDF accessibility still require separate verification.
 
+## Search Engine Discovery
+
+The canonical address is `https://dannyevers.xyz/`. The page includes a descriptive title, meta description, Open Graph sharing information, and JSON-LD describing the same public profile shown on the page. The sharing image uses the existing portfolio screenshot.
+
+`robots.txt` allows crawling and points to `sitemap.xml`, which lists the homepage. The About, Experience, and Projects sections are anchors within that page, so they do not need separate sitemap entries. Submit `https://dannyevers.xyz/sitemap.xml` in Google Search Console after deployment, then inspect the homepage and request indexing. These settings help search engines discover and understand the site; they do not guarantee indexing, rankings, or a rich result.
+
 ## Run Locally
 
 1. Download or clone this repository.
@@ -60,6 +69,8 @@ Serve the project folder as the website root so the `/public/` paths work correc
 ├── index.html
 ├── script.js
 ├── styles.css
+├── robots.txt
+├── sitemap.xml
 ├── public/
 │   ├── barber-booking.png
 │   ├── danny-resume.pdf
