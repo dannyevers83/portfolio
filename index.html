@@ -90,15 +90,16 @@
             skills into practice, from responsive HTML and CSS websites to
             interactive JavaScript and React applications. I’m learning to work
             with components, state, and browser storage, while using Git and
-            GitHub to manage my code and Netlify to publish my projects.
+            GitHub to manage my code, with Netlify and Render for deployment.
           </p>
 
           <p>
-            I’m now connecting React interfaces to REST APIs built with Node.js
-            and Express, practicing request validation, error handling, and
-            automated testing. My next step is learning PostgreSQL for
-            persistent data storage. I’m looking forward to learning from other
-            developers and contributing to meaningful projects.
+            I’m now building a barber booking app with React, Node.js, Express,
+            and PostgreSQL. I’m learning SQL, database migrations, and how to
+            calculate availability and prevent overlapping appointments, while
+            practicing validation, error handling, and automated testing. I’m
+            looking forward to learning from other developers and contributing
+            to meaningful projects.
           </p>
 
           <p>
@@ -128,15 +129,15 @@
               <p>
                 Learning full-stack development through hands-on projects,
                 alongside my background in BIM engineering. Built responsive
-                websites and a task manager in both vanilla JavaScript and
-                React, practicing DOM events, components, props, state, and
-                effects. Progressed from browser storage to an Express REST API,
-                connecting GET, POST, PATCH, and DELETE requests to React with
-                validation, loading feedback, and error handling. Practice
-                automated testing with Vitest, React Testing Library, and
-                Node.js request tests. Use Git and GitHub for version control
-                and Netlify for frontend deployment. PostgreSQL is the next
-                learning step.
+                websites and task managers with vanilla JavaScript and React,
+                practicing components, props, state, effects, and REST APIs. Now
+                developing a barber booking demo with Express and PostgreSQL,
+                using parameterized SQL, migrations, server-side validation, and
+                database constraints to prevent overlapping appointments. Run
+                PostgreSQL locally with Docker and host the demo on Render with
+                a Neon database. Practice automated testing with Vitest, React
+                Testing Library, and Node.js, and use Git and GitHub for version
+                control.
               </p>
               <div class="tag-container">
                 <div class="tag">HTML</div>
@@ -148,6 +149,10 @@
                 <div class="tag">Git &amp; GitHub</div>
                 <div class="tag">Vitest</div>
                 <div class="tag">Netlify</div>
+                <div class="tag">PostgreSQL</div>
+                <div class="tag">Tailwind CSS</div>
+                <div class="tag">Render</div>
+                <div class="tag">Neon</div>
               </div>
             </div>
           </div>
@@ -199,10 +204,81 @@
           <div class="project-card">
             <div class="project-image-container">
               <img
+                src="/public/barber-booking.png"
+                alt="Screenshot of the Oak and Steel Barbers booking demo with its title and barbershop interior"
+                width="1577"
+                height="730"
+                decoding="async"
+              />
+            </div>
+            <div class="card-column">
+              <a
+                class="anchor-text card-header"
+                href="https://oak-and-steel-demo-8l0r.onrender.com/"
+                target="_blank"
+              >
+                <h3>
+                  Oak &amp; Steel Barbers — Booking Demo
+                  <i
+                    class="fa-solid fa-arrow-right-long anchor-icon"
+                    aria-hidden="true"
+                  ></i>
+                </h3>
+              </a>
+              <p>
+                A full-stack barber booking demo built with React, Express, and
+                PostgreSQL. Choose a treatment, view available times based on
+                opening hours and treatment duration, and save an appointment.
+                Server-side validation and a database constraint prevent invalid
+                requests and overlapping bookings. Styled with Tailwind CSS,
+                hosted on Render, with persistent data stored in Neon. A
+                learning project still in development.
+              </p>
+              <a
+                class="anchor-text"
+                href="https://github.com/dannyevers83/barber-booking"
+                target="_blank"
+                aria-label="View source on GitHub: Oak and Steel Barbers"
+                >View source on GitHub</a
+              >
+              <div class="project-stat light-text">
+                <a
+                  class="project-stars-link"
+                  href="https://github.com/dannyevers83/barber-booking/stargazers"
+                  target="_blank"
+                  data-github-repo="dannyevers83/barber-booking"
+                  aria-label="View GitHub stars for barber-booking; count not loaded"
+                >
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <p>
+                    <span data-star-count>—</span>
+                    <span class="sr-only" data-star-description>
+                      GitHub stars (count not loaded)</span
+                    >
+                  </p>
+                </a>
+              </div>
+              <div class="tag-container">
+                <div class="tag">React</div>
+                <div class="tag">JavaScript</div>
+                <div class="tag">Tailwind CSS</div>
+                <div class="tag">Node.js</div>
+                <div class="tag">Express</div>
+                <div class="tag">PostgreSQL</div>
+                <div class="tag">REST API</div>
+                <div class="tag">Render</div>
+                <div class="tag">Neon</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image-container">
+              <img
                 src="/public/task-manager-react.png"
                 alt="Screenshot of React Task Manager with a task input, filters, and checklist"
                 width="1575"
                 height="729"
+                loading="lazy"
                 decoding="async"
               />
             </div>

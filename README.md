@@ -15,9 +15,10 @@ A personal portfolio built with HTML, CSS, and a small JavaScript navigation scr
 - Internal navigation with smooth scrolling
 - Active section indicators in the desktop navigation that follow scrolling, with `aria-current` for assistive technology
 - Project preview images and technology tags
-- React/Express and vanilla JavaScript Task Manager projects, followed by the portfolio and Google homepage
+- Oak & Steel Barbers booking demo first, followed by the React/Express and vanilla JavaScript Task Managers, the portfolio, and Google homepage
+- The barber demo includes the supplied screenshot, live demo, source link, technology tags, and a live GitHub star counter
 - The React/Express card links to both the frontend source and the separate Express API repository
-- Independent study details covering JavaScript, React, Node.js, Express, HTTP APIs, version control, testing, and deployment
+- Independent study details covering React, Express, PostgreSQL, SQL migrations, availability, overlap prevention, testing, Docker, and deployment with Render and Neon
 - Links to my résumé, GitHub, and LinkedIn
 - Custom favicon and a back-to-top button
 - Accessible names for icon links and screen reader text for the project star count
@@ -60,6 +61,7 @@ Serve the project folder as the website root so the `/public/` paths work correc
 ├── script.js
 ├── styles.css
 ├── public/
+│   ├── barber-booking.png
 │   ├── danny-resume.pdf
 │   ├── favicon-32x32.png
 │   ├── html-css-google-homepage.png
