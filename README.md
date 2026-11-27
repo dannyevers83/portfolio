@@ -6,7 +6,7 @@ A portfolio documenting my transition from BIM engineering to applied AI. I’m 
 
 **Oisterwijk Weather Analysis.** A Python learning project that retrieves daily high and low temperatures from Open-Meteo, converts the JSON response into a pandas DataFrame, and exports a CSV and a Matplotlib chart.
 
-[View the weather chart](public/oisterwijk-weather.png)
+[View the screenshot](public/oisterwijk-weather.png) · [View the source on GitHub](https://github.com/dannyevers83/oisterwijk-weather-analysis)
 
 ## Website
 
