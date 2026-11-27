@@ -1,8 +1,12 @@
 # Danny Evers — Data Engineering Portfolio
 
-A portfolio documenting my transition from BIM engineering to data engineering. I work as a BIM engineer at Klictet and build Python projects that collect, transform, and export data.
+A portfolio documenting my transition from BIM engineering to data engineering. I work as a BIM engineer at Klictet and build data projects with Python and SQL.
 
-## Featured Project
+## Projects
+
+**Bicycle Workshop SQL Report.** A SQLite project that ranks completed repairs and reports counts and costs by status using fictional workshop data.
+
+[View the illustration](public/bicycle-workshop.webp) · [View the source on GitHub](https://github.com/dannyevers83/bicycle-workshop-sql)
 
 **Oisterwijk Weather Analysis.** A Python learning project that retrieves daily high and low temperatures from Open-Meteo, converts the JSON response into a pandas DataFrame, and exports a CSV and a Matplotlib chart.
 
@@ -21,7 +25,7 @@ A portfolio documenting my transition from BIM engineering to data engineering. 
 - Internal navigation with smooth scrolling
 - Active section indicators in the desktop navigation that follow scrolling, with `aria-current` for assistive technology
 - Links to GitHub and LinkedIn
-- Clickable GitHub star count for Oisterwijk Weather Analysis, loaded from the GitHub API and cached for 15 minutes per browser session
+- Clickable GitHub star counts for the projects, loaded from the GitHub API and cached for 15 minutes per browser session
 - Custom favicon and a back-to-top button
 - Accessible names for icon links and alternative text for the weather chart
 - A keyboard skip link, visible link focus styles, and section headings available to screen readers on desktop
@@ -34,7 +38,7 @@ A portfolio documenting my transition from BIM engineering to data engineering. 
 
 - **HTML5** — page structure and content
 - **CSS3** — styling, custom properties, and hover effects
-- **JavaScript** — update the current section indicator and fetch the project's GitHub star count
+- **JavaScript** — update the current section indicator and fetch GitHub star counts
 - **Flexbox and CSS Grid** — layout and alignment
 - **Media queries** — responsive styling at 640px and 1024px
 - **Google Fonts** — Inter typography
@@ -71,6 +75,7 @@ Serve the project folder as the website root so the `/public/` paths work correc
 ├── robots.txt
 ├── sitemap.xml
 ├── public/
+│   ├── bicycle-workshop.webp
 │   ├── favicon-32x32.png
 │   └── oisterwijk-weather.png
 ├── .gitignore
