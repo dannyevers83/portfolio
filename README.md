@@ -21,6 +21,7 @@ A portfolio documenting my transition from BIM engineering to applied AI. I’m 
 - Internal navigation with smooth scrolling
 - Active section indicators in the desktop navigation that follow scrolling, with `aria-current` for assistive technology
 - Links to GitHub and LinkedIn
+- Clickable GitHub star count for Oisterwijk Weather Analysis, loaded from the GitHub API and cached for 15 minutes per browser session
 - Custom favicon and a back-to-top button
 - Accessible names for icon links and alternative text for the weather chart
 - A keyboard skip link, visible link focus styles, and section headings available to screen readers on desktop
@@ -33,7 +34,7 @@ A portfolio documenting my transition from BIM engineering to applied AI. I’m 
 
 - **HTML5** — page structure and content
 - **CSS3** — styling, custom properties, and hover effects
-- **JavaScript** — update the current section indicator
+- **JavaScript** — update the current section indicator and fetch the project's GitHub star count
 - **Flexbox and CSS Grid** — layout and alignment
 - **Media queries** — responsive styling at 640px and 1024px
 - **Google Fonts** — Inter typography
