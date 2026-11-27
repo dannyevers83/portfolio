@@ -1,6 +1,6 @@
-# Danny Evers — Python AI Engineering Portfolio
+# Danny Evers — Data Engineering Portfolio
 
-A portfolio documenting my transition from BIM engineering to applied AI. I’m building Python and data analysis skills through hands-on projects while working as a BIM engineer at Klictet.
+A portfolio documenting my transition from BIM engineering to data engineering. I work as a BIM engineer at Klictet and build Python projects that collect, transform, and export data.
 
 ## Featured Project
 
@@ -79,7 +79,7 @@ Serve the project folder as the website root so the `/public/` paths work correc
 
 ## Author
 
-[Danny Evers](https://github.com/dannyevers83) — BIM engineer and aspiring Python AI engineer
+[Danny Evers](https://github.com/dannyevers83) — BIM engineer and aspiring data engineer
 
 ## Acknowledgments
 
