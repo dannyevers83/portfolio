@@ -7,14 +7,48 @@ const navigationSections = navigationLinks.map((link) =>
   document.getElementById(link.hash.slice(1)),
 );
 
+let anchorTarget = document.getElementById(window.location.hash.slice(1));
+let anchorReached = false;
+
+function trackAnchor() {
+  anchorTarget = document.getElementById(window.location.hash.slice(1));
+  anchorReached = false;
+  scheduleSectionUpdate();
+}
+
 function updateCurrentSection() {
   // Follow section headings as they reach the upper part of the viewport.
   const sectionBoundary = Math.min(window.innerHeight * 0.35, 240);
+  const scroller = document.scrollingElement;
+  const maxScroll = scroller.scrollHeight - scroller.clientHeight;
+  const scrollTop = scroller.scrollTop;
   let currentSection = navigationSections[0];
 
   for (const section of navigationSections) {
     if (section.getBoundingClientRect().top <= sectionBoundary) {
       currentSection = section;
+    }
+  }
+
+  if (maxScroll > 1 && scrollTop >= maxScroll - 1) {
+    currentSection = navigationSections.at(-1);
+  }
+
+  if (anchorTarget) {
+    const targetSection = navigationSections.find((section) =>
+      section.contains(anchorTarget),
+    );
+    const scrollMargin =
+      parseFloat(getComputedStyle(anchorTarget).scrollMarginTop) || 0;
+    const targetTop = scrollTop + anchorTarget.getBoundingClientRect().top - scrollMargin;
+    const destination = Math.min(maxScroll, Math.max(0, targetTop));
+
+    // Two different anchors can land at the same scroll position near the end.
+    if (targetSection && Math.abs(scrollTop - destination) <= 1) {
+      currentSection = targetSection;
+      anchorReached = true;
+    } else if (anchorReached) {
+      anchorTarget = null;
     }
   }
 
@@ -41,8 +75,12 @@ function scheduleSectionUpdate() {
 
 window.addEventListener('scroll', scheduleSectionUpdate, { passive: true });
 window.addEventListener('resize', scheduleSectionUpdate);
-window.addEventListener('hashchange', scheduleSectionUpdate);
+window.addEventListener('hashchange', trackAnchor);
 window.addEventListener('pageshow', scheduleSectionUpdate);
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link && link.hash === window.location.hash) trackAnchor();
+});
 
 updateCurrentSection();
 
